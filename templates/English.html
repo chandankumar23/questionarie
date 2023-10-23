@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questionnaire</title>
+</head>
+<body>
+    <h2>Questionnaire</h2>
+    <form method="post" action="/">
+        {% for question in questions %}
+            <p>{{ question['question'] }}</p>
+            {% for choice in question['choices'] %}
+                <!-- <input type="radio" name="{{ question['question'] }}" value="{{ choice }}"> -->
+                <input type="radio" name="answer" value="{{ choice }}">
+                <label>{{ choice }}</label><br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
